@@ -39,4 +39,9 @@ public class CarService {
 		else
 			return cars.stream().filter(i -> i.getPrice() < 500000).collect(Collectors.toList());
 	}
+
+	public List<String> getDistinctBrands() {
+		return repository.getDistinctBrands();
+	}
+
 }
