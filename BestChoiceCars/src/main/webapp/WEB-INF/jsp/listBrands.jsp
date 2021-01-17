@@ -41,7 +41,7 @@ body {
 					<td>${ca.year}</td>
 					<td>${ca.noKms}</td>
 					<td>${ca.price}</td>
-					<td>${ ca.fuel}</td>
+					<td>${ca.fuel == "true"?"Petrol":"Diesel"}</td>
 				</tr>
 			</c:forEach>
 		</table>

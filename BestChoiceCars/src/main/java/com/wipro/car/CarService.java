@@ -33,11 +33,7 @@ public class CarService {
 	}
 
 	public List<Car> getCars(boolean isGreaterThan5Lack) {
-		List<Car> cars = repository.findAll();
-		if (isGreaterThan5Lack)
-			return cars.stream().filter(i -> i.getPrice() > 500000).collect(Collectors.toList());
-		else
-			return cars.stream().filter(i -> i.getPrice() < 500000).collect(Collectors.toList());
+		return isGreaterThan5Lack ? repository.getGreatThan5Lacks() : repository.getLessThan5Lacks();
 	}
 
 	public List<String> getDistinctBrands() {

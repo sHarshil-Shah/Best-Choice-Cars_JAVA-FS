@@ -10,4 +10,10 @@ import org.springframework.stereotype.Repository;
 public interface CarRepository extends JpaRepository<Car, Long> {
 	@Query(value = "SELECT DISTINCT brand FROM Car")
 	public List<String> getDistinctBrands();
+
+	@Query(value = "FROM Car where price < 500000")
+	public List<Car> getLessThan5Lacks();
+
+	@Query(value = "FROM Car where price > 500000")
+	public List<Car> getGreatThan5Lacks();
 }
